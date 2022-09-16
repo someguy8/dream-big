@@ -9,6 +9,8 @@ import { IntroPageComponent } from './Components/intro-page/intro-page.component
 import { LoginComponent } from './Components/login/login.component';
 import { ProfileComponent } from './Components/profile/profile.component';
 
+import { StarSystemWizard } from './Components/star-system-wizard/star-system-wizard';
+
 const adminModule = () => import('./admin/admin.module').then(x => x.AdminModule);
 
 
@@ -19,6 +21,7 @@ const routes: Routes = [
   { path: 'home', component: LandingPageComponent },
   { path: 'intro', component: IntroPageComponent},
   { path: 'star', component: StarControlComponent },
+  { path: 'wizard', component: StarSystemWizard},
   { path: 'avatar-builder', component: AvatarBuilderComponent },
   { path: 'admin', loadChildren: adminModule },
 

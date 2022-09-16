@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from 'src/app/model/user';
-
+import { StarSystemWizard } from '../star-system-wizard/star-system-wizard';
 import { UserService } from 'src/app/services/user.service';
 
 

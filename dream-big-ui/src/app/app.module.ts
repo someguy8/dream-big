@@ -31,6 +31,8 @@ import { ProfileComponent } from './Components/profile/profile.component';
 import { RouterModule } from '@angular/router';
 import { AuthService } from './services/auth.service';
 
+import { StarSystemWizard } from './Components/star-system-wizard/star-system-wizard';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +56,7 @@ import { AuthService } from './services/auth.service';
     TableComponentModule,
     NgMaterialModule,
     RgbPickerModule,
+    StarSystemWizard,
    
     RouterModule.forRoot([
       { path: '', redirectTo: '/', pathMatch: 'full' },
