@@ -136,6 +136,10 @@ Installation steps:
 
 7. Note: You will have to press migrate APIs if it is your first time going through this.
 
+8. Download [DBeaver](https://dbeaver.io/) and install it for your designated operating system.
+
+9. Connect to the Dream Big database in DBeaver by creating a new MariaDB connection where the details match the [docker compose yaml](./docker-compose.yml). Note if the connection does not work with `host=localhost` a solution is to use `host=0.0.0.0`.
+
 
 [comment]: # (--------------------The Links for MacOS--------------------)
 
