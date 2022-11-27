@@ -1,0 +1,5 @@
+goal:
+  id: 2
+  description: description_sample
+  status: test_status
+  section_id: 1
