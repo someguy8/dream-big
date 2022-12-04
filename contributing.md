@@ -6,7 +6,7 @@ To first add your own changes to the repository, you will have to fork it. To do
 Once this is done, you can locate the newly created fork on your account, which can then be cloned to your local machine by navigating to the code button on your forked repository page and opening it in the GitHub Desktop app. From here, you can freely edit your fork of the project. 
 From a terminal, this can also be done from using the following command (replace ‘YOUR_USERNAME’ with your GitHub username): 
 
-  
+
 `git clone https://github.com/YOUR_USERNAME/dream-big` 
 
   
