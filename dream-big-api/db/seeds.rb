@@ -75,6 +75,7 @@ def seed_sequence_data(model, attributes, num)
   return items
 end
 
+# Create Admin user with all values 'admin'
 def create_admin_user_student()
   admin = User.find_or_initialize_by(email: 'admin')
   admin.password = 'admin'
@@ -90,14 +91,17 @@ def create_admin_user_student()
 
 end
 
+# Generate first name test data
 def faker_first_name()
   return Faker::Name.first_name
 end
 
+# Generate name test data
 def faker_name()
   return Faker::Name.name
 end
 
+# Generate phone number test data
 def faker_phone()
   return Faker::PhoneNumber.extension
 end
