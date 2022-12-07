@@ -3,6 +3,11 @@ require 'grape'
 class AvatarApi < Grape::API
   desc 'Allow retrieval of a users Avatar'
   get '/avatar/:id' do
+    avatar_parameters = ActionController::Parameters.new(params)
+      .permit(
+        :id
+      )
+
     # Auth
 
     result = Avatar.find(params[:id])
@@ -11,10 +16,12 @@ class AvatarApi < Grape::API
 
   desc 'Allow creation of an Avatar'
   params do
+  
     requires :avatar_head_id, type: Integer, desc: 'Avatar Head ID'
     requires :avatar_torsos_id, type: Integer, desc: 'Avatar torso ID'
     requires :avatar_hairs_id, type: Integer, desc: 'Avatar hair ID'
     requires :avatar_accessories_id, type: Integer, desc: 'Avatar accessories ID'
+
   end
   post '/avatar' do
     avatar_parameters = ActionController::Parameters.new(params)
@@ -34,6 +41,7 @@ class AvatarApi < Grape::API
 
   desc 'Allow updating of a Avatar'
   params do
+    
     optional :avatar_head_id, type: Integer, desc: 'Avatar Head ID'
     optional :avatar_torsos_id, type: Integer, desc: 'Avatar torso ID'
     optional :avatar_hairs_id, type: Integer, desc: 'Avatar hair ID'
@@ -51,7 +59,7 @@ class AvatarApi < Grape::API
     # Auth
 
     result = Avatar.find(params[:id])
-    result.update!(avatar_parameters)
+    result.update! avatar_parameters
 
     present result, with: Entities::AvatarEntity
   end
@@ -62,7 +70,7 @@ class AvatarApi < Grape::API
   end
   delete '/avatar/:id' do
     Avatar.find(params[:id]).destroy!
-    return true
+    true
   end
 
   get '/avatar' do

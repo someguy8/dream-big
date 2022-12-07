@@ -2,12 +2,9 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 import words from '../../../assets/words.json';
 
 
-// import { StarComponent } from '../Star/star.component';
-// import { Category } from '../Star/types';
-import { Category } from 'src/app/helpers/types';
+import { StarComponent } from '../Star/star.component';
+import { Category } from '../Star/types';
 import { MatDialog } from '@angular/material/dialog';
-import { Point } from 'src/app/helpers/types';
-import { KonvStarComponent } from '../KonvaStar/konv-star.component';
 
 @Component({
     selector: 'app-star-control',
@@ -17,8 +14,7 @@ import { KonvStarComponent } from '../KonvaStar/konv-star.component';
 export class StarControlComponent implements OnInit {
     constructor(public dialog: MatDialog) { }
 
-    // @ViewChild(StarComponent) star: StarComponent = {} as StarComponent;
-    @ViewChild(KonvStarComponent) star: KonvStarComponent = {} as KonvStarComponent;
+    @ViewChild(StarComponent) star: StarComponent = {} as StarComponent;
 
     polygonFillColour: string = '#EADA87';
 
@@ -51,7 +47,7 @@ export class StarControlComponent implements OnInit {
         },
     ]
     starSize: number = 20;
-    centrePoint: Point = {} as Point;
+    centrePoint: paper.Point = {} as paper.Point;
     rotation: number = 0;
     numSpikes: number = 5;
     outerRatio: number = 8;
@@ -60,12 +56,10 @@ export class StarControlComponent implements OnInit {
 
     ngOnInit(): void {
         this.centrePoint = {
-            // x:0,
-            // y: 0
-            x: window.document.getElementById('container').clientWidth / 5,
-            y: window.document.getElementById('container').clientHeight / 3
+            x: window.document.getElementById('c-div')?.clientWidth! / 3,
+            y: window.document.getElementById('c-div')?.clientHeight! / 2
 
-        } as Point;
+        } as paper.Point;
         this.resetCategories();
     }
 

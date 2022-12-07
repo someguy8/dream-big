@@ -1,8 +1,8 @@
 module Entities
     class GoalsEntity < Grape::Entity
       expose :id
-      expose :description
+      expose :goal_text
       expose :status
-      expose :section_id
+      expose :timestamps
     end
-end
+  end

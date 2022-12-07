@@ -20,44 +20,37 @@ import { AuthService } from './services/auth.service';
 // component imports
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { StarControlComponent } from './Components/StarControl/star-control.component';
-// import { StarComponent } from './Components/Star/star.component';
+import { StarComponent } from './Components/Star/star.component';
 import { AppComponent } from './app.component';
 import { IntroPageComponent } from './Components/intro-page/intro-page.component';
 import { TableComponentModule } from './admin/generic/table.component';
-// import { StarMapComponent } from './Components/StarMap/star-map.component';
-import { StepsComponent } from './Components/Wizard-Assessment/steps/steps.component';
-import { StepTemplateComponent } from './Components/Wizard-Assessment/steps-template/steps-template.component';
-import { StarWizardComponent } from './Components/Wizard-Assessment/star-wizard/star-wizard.component';
-import { CompleteWizardComponent } from './Components/Wizard-Assessment/complete-wizard/complete-wizard.component';
-// import { HomeComponent } from './Components/home/home.component';
+import { StarMapComponent } from './Components/StarMap/star-map.component';
+import { StepsComponent } from './Components/Wizard/steps/steps.component';
+import { StepTemplateComponent } from './Components/Wizard/steps-template/steps-template.component';
+import { StarWizardComponent } from './Components/Wizard/star-wizard/star-wizard.component';
+import { CompleteWizardComponent } from './Components/Wizard/complete-wizard/complete-wizard.component';
+import { HomeComponent } from './Components/home/home.component';
+import { WizardDialogComponent } from './wizard-dialog/wizard-dialog.component';
 import { LoginComponent } from './Components/login/login.component';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { SolarSystemComponent } from './Components/SolarSystem/solar-system.component';
-import { KonvStarComponent } from './Components/KonvaStar/konv-star.component';
-import { SectionDialogComponent } from './Components/SolarSystem/section-dialog.component';
-import { AvatarComponent } from './helpers/avatar/avatar.component';
-import { AvatarContainerComponent } from './Components/profile/avatarContainer/avatar-container.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     StarControlComponent,
-    // StarComponent,
+    StarComponent,
     IntroPageComponent,
     LoginComponent,
-    // StarMapComponent,
+    StarMapComponent,
     StepsComponent,
     StepTemplateComponent,
     StarWizardComponent,
     CompleteWizardComponent,
-    // HomeComponent,
-    SolarSystemComponent,
-    KonvStarComponent,
-    SectionDialogComponent,
-    AvatarComponent,
-    ProfileComponent,
-    AvatarContainerComponent
+    WizardDialogComponent,
+    HomeComponent,
+    SolarSystemComponent
   ],
   imports: [
     BrowserAnimationsModule,

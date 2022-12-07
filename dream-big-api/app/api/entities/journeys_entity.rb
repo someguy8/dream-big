@@ -1,6 +1,8 @@
 module Entities
-    class JourneysEntity < Grape::Entity
+    class JourneyEntity < Grape::Entity
       expose :id
       expose :student_id
+      expose :assessment_id
+      expose :timestamps
     end
-end
+  end

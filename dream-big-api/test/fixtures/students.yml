@@ -1,8 +1,3 @@
 admin:
   firstName: admin
   user: admin
-
-student:
-  id: 1
-  firstname: student
-  user: student

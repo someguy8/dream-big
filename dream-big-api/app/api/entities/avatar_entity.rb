@@ -1,5 +1,5 @@
 module Entities
-    class AvatarEntity < Grape::Entity
+    class CategoryEntity < Grape::Entity
       expose :id
       expose :avatar_head_id
       expose :avatar_torsos_id

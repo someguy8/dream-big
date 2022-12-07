@@ -3,6 +3,11 @@ require 'grape'
 class CategoryApi < Grape::API
   desc 'Allow retrieval of a single category'
   get '/category/:id' do
+    category_parameters = ActionController::Parameters.new(params)
+      .permit(
+        :id
+      )
+
     # Auth
 
     result = Category.find(params[:id])
@@ -11,6 +16,7 @@ class CategoryApi < Grape::API
 
   desc 'Allow creation of a category'
   params do
+  
     requires :name, type: String, desc: 'Category name'
     requires :description, type: String, desc: 'The description of the category'
   end
@@ -18,7 +24,7 @@ class CategoryApi < Grape::API
     category_parameters = ActionController::Parameters.new(params)
       .permit(
         :name,
-        :description
+        :description,
       )
 
     # Auth...
@@ -30,6 +36,7 @@ class CategoryApi < Grape::API
 
   desc 'Allow updating of a categories'
   params do
+    
     optional :name, type: String, desc: 'The categoryr name'
     optional :description, type: String, desc: 'The description of the category'
   end
@@ -37,7 +44,8 @@ class CategoryApi < Grape::API
     category_parameters = ActionController::Parameters.new(params)
       .permit(
         :name,
-        :description
+        :description,
+        #Ex:- :default =>''
       )
 
     # Auth
@@ -54,7 +62,7 @@ class CategoryApi < Grape::API
   end
   delete '/category/:id' do
     Category.find(params[:id]).destroy!
-    return true
+    true
   end
 
   get '/category' do

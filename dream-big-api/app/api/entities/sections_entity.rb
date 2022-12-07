@@ -3,5 +3,6 @@ module Entities
       expose :id
       expose :planet_id
       expose :category_id
+      expose :timestamps
     end
-end
+  end
