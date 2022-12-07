@@ -1,0 +1,17 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title> {{ data.category.name }} </mat-card-title>
+  </mat-card-header>
+  <img id="dialog-image" mat-card-image>
+  <mat-card-content>
+    
+      <app-star-wizard></app-star-wizard>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+    <div>
+      <button mat-button (click)="dialogRef.close(data.category.name)">OK</button>
+      <button mat-button (click)="dialogRef.close()">Cancel</button>
+    </div>
+  </mat-card-actions>
+</mat-card>
