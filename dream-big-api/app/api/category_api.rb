@@ -30,7 +30,7 @@ class CategoryApi < Grape::API
 
   desc 'Allow updating of a categories'
   params do
-    optional :name, type: String, desc: 'The categoryr name'
+    optional :name, type: String, desc: 'The category name'
     optional :description, type: String, desc: 'The description of the category'
   end
   put '/category/:id' do
