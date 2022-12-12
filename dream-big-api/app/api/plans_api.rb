@@ -28,9 +28,9 @@ class PlansApi < Grape::API
 
     # Auth...
 
-    plan = Plan.create!(plan_parameters)
+    created_plan = Plan.create!(plan_parameters)
 
-    present plan, with: Entities::PlansEntity
+    present created_plan, with: Entities::PlansEntity
   end
 
   desc 'Allow updating of a Plan'
@@ -51,10 +51,10 @@ class PlansApi < Grape::API
 
     # Auth
 
-    plan = Plan.find(params[:id])
-    plan.update!(plan_parameters)
+    update_plan = Plan.find(params[:id])
+    update_plan.update!(plan_parameters)
 
-    present plan, with: Entities::PlansEntity
+    present update_plan, with: Entities::PlansEntity
   end
 
   desc 'Delete the plan with the indicated id'
